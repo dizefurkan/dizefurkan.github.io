@@ -1,0 +1,191 @@
+.section {
+  position: relative; display: block;
+  width: 100%; height: 100%;
+}
+
+.sectionBox {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  position: relative;
+  display: block;
+}
+
+#name {
+  display: block;
+}
+
+#detail {
+  display: none;
+}
+
+.text {
+  text-align: center;
+  font-size: 36px;
+  animation-name: title;
+  animation-duration: 2s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.text:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.line {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  background-color: #000000;
+}
+
+.TopandBottom {
+  height: 2px;
+  width: 100%;
+}
+
+.RightandLeft {
+  height: 0;
+  width: 2px;
+}
+
+.top {
+  top: 0;
+  animation: TopandBottom 1s;
+  animation-delay: 1s;
+  animation-fill-mode:forwards;
+}
+.right {
+  right: 0;
+  animation: RightandLeft 1s;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
+}
+.bottom {
+  bottom: 0; right: 0;
+  animation: TopandBottom 1s;
+  animation-delay: 1s;
+  animation-fill-mode:forwards;
+}
+.left {
+  left: 0; bottom: 0;
+  animation: RightandLeft 1s;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes TopandBottom {
+  0% { opacity: 1; width: 0%; }
+  100% { width: 100%; opacity: 1;}
+}
+
+@keyframes RightandLeft {
+  0% { opacity: 1; height: 0%; }
+  100% { height: 100%; opacity: 1;}
+}
+
+@keyframes title {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*__________________________________________________________*/
+
+.detailText {
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: #263238;
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.info i {
+  margin-right: 5px;
+}
+
+.infoText {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.infoTextDetail {
+  display: inline-block;
+}
+
+.infoText:hover .infoTextDetail {
+  display: inline-block;
+}
+
+.detailTextArea {
+  display: block;
+  animation-name: detailTextArea;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes detailTextArea {
+  0% { opacity: 0; display: none; }
+  100% { opacity: 1; display: block;  }
+}
+
+.detailBack {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1;
+  animation-name: detailBack;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: .5s;
+}
+
+@keyframes detailBack {
+  0% { opacity: 0; width: 0%; }
+  100% { opacity: 1; width: 100%; }
+}
+
+.img-responsive {
+  width: 100px;
+  height: 150px;
+  margin: auto;
+  border-radius: 255px;
+  margin-bottom: 10px;
+  transition: .5s;
+  animation-name: image;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes image {
+  0% { width: 100; opacity: .9; }
+  100% { width: 150px; opacity: 1; }
+}
+
+.infoTextDetail__more {
+  display: block;
+  font-size: 14px;
+}
+
+/*__________________________________________________________*/
+
+@media (max-width: 737px) {
+  .sectionBox {
+    width: 100%;
+  }
+}
