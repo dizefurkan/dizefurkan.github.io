@@ -49,13 +49,13 @@
 }
 
 .TopandBottom {
-  height: 2px;
+  height: 3px;
   width: 100%;
 }
 
 .RightandLeft {
   height: 0;
-  width: 2px;
+  width: 0;
 }
 
 .top {
