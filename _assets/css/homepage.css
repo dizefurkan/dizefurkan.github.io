@@ -178,7 +178,7 @@
 }
 
 .infoTextDetail__more {
-  display: block;
+  display: none;
   font-size: 14px;
 }
 
