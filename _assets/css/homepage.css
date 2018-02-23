@@ -112,13 +112,8 @@
 }
 
 .info i {
+  vertical-align: top;
   margin-right: 5px;
-}
-
-.infoText {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 2px;
 }
 
 .infoTextDetail {
@@ -126,6 +121,24 @@
 }
 
 .infoText:hover .infoTextDetail {
+  display: inline-block;
+}
+
+.link {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 2px;
+  transition: .2s;
+}
+
+.socialmediaBox {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.socialmediaItem {
   display: inline-block;
 }
 
