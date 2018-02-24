@@ -14,6 +14,7 @@
 .box {
   position: relative;
   display: block;
+  transition: .5s;
 }
 
 #name {
@@ -36,16 +37,22 @@
   transition: .5s;
 }
 
-.text:hover {
+.box:hover .text {
   background-color: #000000;
   color: #ffffff;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.50);
+}
+
+.box:hover .line {
+  background-color: #000000;
 }
 
 .line {
   position: absolute;
   z-index: 1;
   opacity: 0;
-  background-color: #000000;
+  background-color: #333;
+  transition: .5s;
 }
 
 .TopandBottom {
@@ -55,7 +62,7 @@
 
 .RightandLeft {
   height: 0;
-  width: 0;
+  width: 0px;
 }
 
 .top {
@@ -83,9 +90,10 @@
   animation-fill-mode:forwards;
 }
 
+
 @keyframes TopandBottom {
   0% { opacity: 1; width: 0%; }
-  100% { width: 100%; opacity: 1;}
+  100% { width: 100%; opacity: 1; }
 }
 
 @keyframes RightandLeft {
@@ -94,15 +102,15 @@
 }
 
 @keyframes title {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 0; letter-spacing: 1px; }
+  100% { opacity: 1; letter-spacing: 0; }
 }
 
 /*__________________________________________________________*/
 
 .detailText {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
   color: #263238;
 }
@@ -113,11 +121,16 @@
 
 .info i {
   vertical-align: top;
-  margin-right: 5px;
+  font-size: 18px;
+}
+
+.socialmediaBox i {
+  margin: 0 5px;
 }
 
 .infoTextDetail {
   display: inline-block;
+  margin-left: 5px;
 }
 
 .infoText:hover .infoTextDetail {
