@@ -3,7 +3,7 @@ function disable(key) {
   var name = document.getElementById('name');
   if (key === "name") {
     if (name.style.display === "none") {
-      name.style.display = "block";
+      name.style.display = "inline-block";
       detail.style.display = "none";
     }
     else {
@@ -19,7 +19,7 @@ function disable(key) {
     }
     else {
       detail.style.display = "none";
-      name.style.display = "block";
+      name.style.display = "inline-block";
     }
   }
 }
