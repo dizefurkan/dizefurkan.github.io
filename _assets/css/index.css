@@ -14,7 +14,6 @@
 }
 /* SIDE 1 */
 .side .meta {
-    margin-top: 20px;
     text-align: center;
 }
 
@@ -40,7 +39,6 @@
 
 .side .links {
     margin-top: 10px;
-    padding: 10px;
     text-align: center;
 }
 
@@ -66,7 +64,13 @@
 }
 
 .side .withoutText {
+    position: relative;
     margin-top: 10px;
+    transition: .3s;
+}
+
+.side .withoutText.visited {
+    padding-top: 25px;
 }
 
 .side .withoutText__link {
@@ -88,29 +92,58 @@
     transition: .3s;
 }
 
-.side .linkHover:hover {
+.side .linkHover:hover,
+.side .linkHover.visited {
     color: #fff;
     background-color: #333;
 }
 
+.withoutText__link__text {
+    position: absolute;
+    display: none;
+    padding: 0 2px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+    line-height: 25px;
+    color: rgb(51,51,51);
+    word-break: keep-all;
+    z-index: 1;
+    background-color: #333;
+    color: #fff;
+}
+
+.withoutText__link__text:hover,
+.withoutText__link__text:focus {
+    background-color: #333;
+    color: #fff;
+}
+
 .side .mainSide__close {
     position: relative;
+    margin-bottom: 10px;
     display: block;
     top: 0;
+    opacity: 0;
     left: 0;
-    width: 0;
     padding: 10px 10px;
-    color: #ffffff;
+    color: #fff;
+    /*color: #000;*/
     cursor: pointer;
     background-color: #000000;
+    /*background-color: #fff;*/
     animation-name: widening-anim;
-    animation-duration: 1s;
+    animation-duration: .7s;
+    animation-delay: .7s;
     animation-fill-mode: forwards;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    z-index: 5;
 }
 
 @keyframes widening-anim {
-    0% { width: 0%; }
-    100% { width: 100%; }
+    0% { width: 0%; opacity: 0; }
+    100% { width: 100%; opacity: 1; }
 }
 /* END OF SIDE 1 */
 /* ////////////////////////////////////////////////// */
@@ -129,7 +162,7 @@
     background-color: #ffffff;
     transition: .5s;
     animation-name: side-title-anim;
-    animation-duration: 2.5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
@@ -164,7 +197,7 @@
     width: 0%;
     height: 3px;
     animation-name: line-animation-vertical;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -174,7 +207,7 @@
     height: 0%;
     animation-name: line-animation-horizontal;
     animation-duration: 1s;
-    animation-delay: 1s;
+    animation-delay: .5s;
     animation-fill-mode: forwards;
 }
 
@@ -189,7 +222,7 @@
 }
 
 @keyframes line-animation-vertical {
-  0% { width: 0%; opacity: 1; }  
+  0% { width: 25%; opacity: 1; }  
   100% { width: 100%; opacity: 1; }
 }
 
@@ -209,6 +242,14 @@
     .side .title {
         font-size: 36px;
     }
+
+    .side .withoutText {
+        padding-top: 25px;
+    }
+
+    .side .withoutText.visited {
+        padding-top: 25px;
+    }
 }
 
 .side {
@@ -226,9 +267,99 @@
 .mainSide {
     position: relative;
     display: none;
+    padding: 20px;
 }
 
 @keyframes fadeIn-anim {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+.effect {
+    position: absolute;
+    transition: .3s;
+    background-color: #111;
+    z-index: 10;
+}
+
+.effect__linetop {
+    top: 0; left: 0;
+    width: 0%; height: 3px;
+    animation-name: effect-line-horizontal;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__linetop2 {
+    top: 0; right: 0;
+    width: 0%; height: 3px;
+    animation-name: effect-line-horizontal;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__lineright {
+    top: 0; right: 0;
+    height: 0%; width: 3px;
+    animation-name: effect-line-vertical;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__lineright2 {
+    bottom: 0; right: 0;
+    height: 0%; width: 3px;
+    animation-name: effect-line-vertical;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__linebottom {
+    bottom: 0; right: 0;
+    width: 0%; height: 3px;
+    animation-name: effect-line-horizontal;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__linebottom2 {
+    bottom: 0; left: 0;
+    width: 0%; height: 3px;
+    animation-name: effect-line-horizontal;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__lineleft {
+    top: 0; left: 0;
+    height: 0%; width: 3px;
+    animation-name: effect-line-vertical;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.effect__lineleft2 {
+    bottom: 0; left: 0;
+    height: 0%; width: 3px;
+    animation-name: effect-line-vertical;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes effect-line-horizontal {
+    0% {
+        width: 0%;
+    } 
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes effect-line-vertical {
+    0% {
+        height: 0%;
+    } 
+    100% {
+        height: 100%;
+    }
 }
