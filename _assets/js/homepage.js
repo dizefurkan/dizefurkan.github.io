@@ -1,7 +1,6 @@
 $(document).ready(function() {
   var windowHeight = $( document ).height();
   var maxHeight = 500;
-  console.log(windowHeight, maxHeight);
   $('.welcomeSide').click(function() {
     $(this).hide();
     if (windowHeight <= maxHeight) {
@@ -23,11 +22,12 @@ $(document).ready(function() {
 
   $(withoutText__link).hover(function() {
     var index = $(this).index();
+    // var index = $(this).attr('data-index');
     addIconText(index);
   });
 
   $(withoutText).mouseleave(function() {
-    $(this).removeClass('visited');
+    $(withoutText).removeClass('visited');
     $('#withoutText__link__text').html('');
     $('#withoutText__link__text').css('display', 'none');
     $(withoutText__link).removeClass('visited');
@@ -43,6 +43,7 @@ $(document).ready(function() {
     $('#withoutText__link__text').html($linkTitle);
     $('#withoutText__link__text').attr('href', $link);
     $('#withoutText__link__text').attr('title', $linkTitle);
+    $('#withoutText__link__text').attr('target', '_blank');
     $('#withoutText__link__text').css('display', 'block');
   }
 });

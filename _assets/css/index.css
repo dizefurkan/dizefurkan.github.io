@@ -10,6 +10,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.blockRow {
+    position: relative;
+    display: block;
+}
+
 /* SIDE 1 */
 .side .meta {
     text-align: center;
@@ -69,19 +74,29 @@
 }
 
 .side .withoutText.visited {
+    transition: .3s;
     padding-top: 25px;
+}
+
+.side .withoutTextCoverBox {
+    position: relative;
+    display: inline-block;
+    border-top: 2px solid #333;
 }
 
 .side .withoutText__link {
     display: inline-block;
     font-size: 18px;
     color: #333;
+    height: 30px;
+    line-height: 30px;
     animation-name: fadeIn-anim;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 .side .withoutText__link__icon {
+    display: block;
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -100,16 +115,16 @@
 .withoutText__link__text {
     position: absolute;
     display: none;
-    padding: 0 2px;
-    top: 0;
+    top: -25px;
     left: 50%;
+    width: 100%;
+    color: #333;
     transform: translateX(-50%);
     line-height: 25px;
     word-break: keep-all;
     z-index: 1;
     font-size: 16px;
     transition: .5s;
-    border-bottom: 1px solid;
     animation-name: link-text-anim;
     animation-duration: .5s;
     animation-fill-mode: forwards;
@@ -117,7 +132,6 @@
 
 .withoutText__link__text:hover,
 .withoutText__link__text:focus {
-    transition: .5s;
     animation-name: link-text-hover-anim;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -130,20 +144,17 @@
     100% {
         color: #fff;
         background-color: #333;
-        border-bottom: 0;
     }
 }
 
 @keyframes link-text-anim {
     0% {
-        color: #fff;
+        opacity: 0;
     }
     100% {
-        color: #333;
+        opacity: 1;
     }
 }
-
-
 
 .side .mainSide__close {
     position: relative;
@@ -269,7 +280,7 @@
     }
 
     .side .withoutText {
-        padding-top: 25px;
+        /*padding-top: 25px;*/
     }
 
     .side .withoutText.visited {
@@ -318,7 +329,7 @@
 .mainSide {
     position: relative;
     display: none;
-    padding: 20px;
+    padding: 10px;
 }
 
 @keyframes fadeIn-anim {
