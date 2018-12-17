@@ -22,7 +22,6 @@ $(document).ready(function() {
 
   $(withoutText__link).hover(function() {
     var index = $(this).index();
-    // var index = $(this).attr('data-index');
     addIconText(index);
   });
 
