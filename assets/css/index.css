@@ -40,6 +40,10 @@
     animation-fill-mode: forwards;
 }
 
+.side .meta__tag.small {
+    font-size: 20px;
+}
+
 .side .links {
     overflow: hidden;
     margin-top: 10px;
