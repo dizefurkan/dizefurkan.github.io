@@ -1,6 +1,9 @@
 $(document).ready(function() {
   var windowHeight = $( document ).height();
   var maxHeight = 500;
+
+  renderSocialMediaItems();
+
   $('.welcomeSide').click(function() {
     $(this).hide();
     if (windowHeight <= maxHeight) {
@@ -47,3 +50,67 @@ $(document).ready(function() {
   }
 });
 
+function renderSocialMediaItems() {
+  const container = $('#withoutText__link__container');
+  socialmedia.forEach(function(media) {
+    const div = document.createElement("div");
+    const icon = document.createElement("i");
+    div.setAttribute('class', 'withoutText__link linkHover');
+    div.setAttribute('title', media.title);
+    div.setAttribute('data-link', media.link);
+
+    const iconClass = 'withoutText__link__icon ' + media.icon;
+    icon.setAttribute('class', iconClass);
+
+    div.appendChild(icon);
+    container.append(div);
+  });
+}
+
+const socialmedia = [
+  {
+    title: 'eyeem.com/u/dizefurkan',
+    link: 'https://www.eyeem.com/u/dizefurkan',
+    icon: 'fas fa-camera',
+  },
+  {
+    title: 'instagram/dizefurkan',
+    link: 'https://instagram.com/dizefurkan',
+    icon: 'fab fa-instagram',
+  },
+  {
+    title: 'dizefurkan@gmail.com',
+    link: 'mailto:dizefurkan@gmail.com',
+    icon: 'fas fa-envelope',
+  },
+  {
+    title: 'medium.com/@dizefurkan',
+    link: 'https://medium.com/@dizefurkan',
+    icon: 'fab fa-medium-m',
+  },
+  {
+    title: 'soundcloud.com/dizefurkan',
+    link: 'https://soundcloud.com/dizefurkan',
+    icon: 'fab fa-soundcloud',
+  },
+  {
+    title: 'spotify.com/user/dizefurkan',
+    link: 'https://open.spotify.com/user/dizefurkan',
+    icon: 'fab fa-spotify',
+  },
+  {
+    title: 'pinterest.com/dizefurkan',
+    link: 'https://pinterest.com/dizefurkan',
+    icon: 'fab fa-pinterest-p',
+  },
+  {
+    title: 'twitter.com/dizefurkan',
+    link: 'https://twitter.com/dizefurkan',
+    icon: 'fab fa-twitter',
+  },
+  {
+    title: 'unsplash.com/dizefurkan',
+    link: 'https://www.unsplash.com/dizefurkan',
+    icon: 'fas fa-camera-retro',
+  },
+];
